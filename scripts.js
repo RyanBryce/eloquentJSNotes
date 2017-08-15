@@ -136,6 +136,7 @@ console.log(nums);
 
 
 ////////Logical operators
+/*
 console.log(true && false)
 // → false
 console.log(true && true)
@@ -145,3 +146,33 @@ console.log(false || true)
 // → true
 console.log(false || false)
 // → false
+*/
+
+
+/////////////// CHAPTER 2 PROGRAM STRUCTURE
+
+//////////////Notes
+
+/*
+////Expressions and statements
+A fragment of code that produces a value is called an expression.
+
+If an expression corresponds to a sentence fragment, a JavaScript statement corresponds to a full sentence in a human language. A program is simply a list of statements.
+
+A statement stands on its own and amounts to something only if it affects the world. It could display something on the screen—that counts as changing the world—or it could change the internal state of the machine in a way that will affect the statements that come after it. These changes are called side effects.
+
+
+////Variables
+To catch and hold values, JavaScript provides a thing called a variable.
+
+
+
+
+*/
+
+
+
+//////////////    JS Testing For Chapter 2
+
+////variables
+var caught = 5 * 5;
