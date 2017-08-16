@@ -157,13 +157,40 @@ console.log(false || false)
 ////Expressions and statements
 A fragment of code that produces a value is called an expression.
 
-If an expression corresponds to a sentence fragment, a JavaScript statement corresponds to a full sentence in a human language. A program is simply a list of statements.
+If an expression corresponds to a sentence fragment, a JavaScript statement corresponds to a full sentence in a human language.
+ A program is simply a list of statements.
 
-A statement stands on its own and amounts to something only if it affects the world. It could display something on the screen—that counts as changing the world—or it could change the internal state of the machine in a way that will affect the statements that come after it. These changes are called side effects.
+A statement stands on its own and amounts to something only if it affects the world.
+ It could display something on the screen—that counts as changing the world
+ or it could change the internal state of the machine in a way that will affect the statements that come after it. These changes are called side effects.
 
 
 ////Variables
 To catch and hold values, JavaScript provides a thing called a variable.
+
+var indicates that this sentence is going to define a variable.
+It is followed by the name of the variable and, if we want to immediately give it a value, by an = operator and an expression.
+
+After a variable has been defined, its name can be used as an expression.
+
+rules for variables:
+  Variable names can be any word that isn’t a reserved word (such as var).
+  They may not include spaces.
+  Digits can also be part of variable names—catch22 is a valid name, for example—but the name must not start with a digit.
+  A variable name cannot include punctuation, except for the characters $ and _. mn(angularJS's $scope makes sense now)
+
+When a variable points at a value, that does not mean it is tied to that value forever.
+The = operator can be used at any time on existing variables to disconnect them from their current value and have them point to a new one.
+
+You should imagine variables as tentacles, rather than boxes.
+They do not contain values; they grasp them—two variables can refer to the same value.
+
+A single var statement may define multiple variables. The definitions must be separated by commas.
+
+
+////Keywords and reserved words
+
+
 
 
 
@@ -175,4 +202,21 @@ To catch and hold values, JavaScript provides a thing called a variable.
 //////////////    JS Testing For Chapter 2
 
 ////variables
-var caught = 5 * 5;
+/*var caught = 5 * 5;
+
+var mood = "light";
+console.log(mood);
+// → light
+mood = "dark";
+console.log(mood);
+// → dark
+
+var luigisDebt = 140;
+luigisDebt = luigisDebt - 35;
+console.log(luigisDebt);
+// → 105
+
+var one = 1, two = 2;
+console.log(one + two);
+// → 3
+*/
