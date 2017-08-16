@@ -190,7 +190,37 @@ A single var statement may define multiple variables. The definitions must be se
 
 ////Keywords and reserved words
 
+Words with a special meaning, such as var, are keywords, and they may not be used as variable names.
+There are also a number of words that are “reserved for use” in future versions of JavaScript.
 
+break case catch class const continue debugger
+default delete do else enum export extends false
+finally for function if implements import in
+instanceof interface let new null package private
+protected public return static super switch this
+throw true try typeof var void while with yield
+
+Don’t worry about memorizing these, but remember that this might be the problem when a variable definition does not work as expected.
+
+
+////The environment
+The collection of variables and their values that exist at a given time is called the environment.
+
+
+////Functions
+A function is a piece of program wrapped in a value.
+Executing a function is called invoking, calling, or applying it.
+Values given to functions are called arguments
+
+
+////The console.log function
+Most JavaScript systems (including all modern web browsers and Node.js)
+provide a console.log function that writes out its arguments to some text output device.
+It is actually an expression that retrieves the log property from the value held by the console variable.
+
+
+////Return values
+Showing a dialog box or writing text to the screen is a side effect
 
 
 
@@ -219,4 +249,8 @@ console.log(luigisDebt);
 var one = 1, two = 2;
 console.log(one + two);
 // → 3
+
+var x = 30;
+console.log("the value of x is", x);
+// → the value of x is 30
 */
