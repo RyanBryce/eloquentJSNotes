@@ -221,6 +221,31 @@ It is actually an expression that retrieves the log property from the value held
 
 ////Return values
 Showing a dialog box or writing text to the screen is a side effect
+Functions may also produce values, and in that case, they don’t need to have a side effect to be useful.
+For example, the function Math.max takes any number of number values and gives back the greatest.
+
+////Prompt and confirm
+You can ask the user an OK/Cancel question using confirm.
+This returns a Boolean: true if the user clicks OK and false if the user clicks Cancel.
+
+The prompt function can be used to ask an “open” question.
+The first argument is the question, the second one is the text that the user starts with.
+A line of text can be typed into the dialog window, and the function will return this text as a string.
+
+
+////Control flow
+When your program contains more than one statement, the statements are executed, predictably, from top to bottom.
+Here is the rather trivial schematic representation of straight control flow:
+========>
+
+
+////Conditional execution
+An alternative to strait control flow is conditional execution, where we choose between two different routes based on a Boolean value.
+Conditional execution is written with the if keyword in JavaScript.
+
+This alternate path is represented by the second arrow in the diagram.
+The else keyword can be used, together with if, to create two separate, alternative execution paths.
+
 
 
 
