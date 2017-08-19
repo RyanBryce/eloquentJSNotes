@@ -264,6 +264,73 @@ In this book, I will write most single-statement bodies without braces, since I 
 
 
 ////Indenting Code
+In fact, even the line breaks in programs are optional.
+You could write a program as a single long line if you felt like it.
+The role of the indentation inside blocks is to make the structure of the code stand out.
+
+
+////For loops
+    for (var number = 0; number <= 12; number = number + 2)
+    console.log(number);
+This program is exactly equivalent to the earlier even-number-printing example.
+The only change is that all the statements that are related to the “state” of the loop are now grouped together.
+
+
+////Breaking Out of a Loop
+Having the loop’s condition produce false is not the only way a loop can finish.
+There is a special statement called break that has the effect of immediately jumping out of the enclosing loop.
+
+for (var current = 20; ; current++) {
+  if (current % 7 == 0)
+    break;
+}
+console.log(current);
+// → 21
+
+The for construct in the example does not have a part that checks for the end of the loop.
+This means that the loop will never stop unless the break statement inside is executed.
+
+The continue keyword is similar to break, in that it influences the progress of a loop.
+When continue is encountered in a loop body, control jumps out of the body and continues with the loop’s next iteration.
+
+
+////Updating variables succinctly
+For counter += 1 and counter -= 1, there are even shorter equivalents: counter++ and counter--.
+
+
+////Dispatching on a value with switch
+switch (prompt("What is the weather like?")) {
+  case "rainy":
+    console.log("Remember to bring an umbrella.");
+    break;
+  case "sunny":
+    console.log("Dress lightly.");
+  case "cloudy":
+    console.log("Go outside.");
+    break;
+  default:
+    console.log("Unknown weather type!");
+    break;
+}
+
+The program will jump to the label that corresponds to the value that switch was given or to default if no matching value is found.
+It starts executing statements there, even if they’re under another label, until it reaches a break statement.
+
+
+////Capitalization
+Variable names may not contain spaces, yet it is often helpful to use multiple words to clearly describe what the variable represents.
+The standard JavaScript functions, and most JavaScript programmers, follow the bottom style—they capitalize every word except the first.
+
+In a few cases, such as the Number function, the first letter of a variable is also capitalized.
+This was done to mark this function as a constructor.
+
+
+////Comments
+Often, raw code does not convey all the information you want a program to convey to human readers,
+or it conveys it in such a cryptic way that people might not understand it.
+ At other times, you might just feel poetic or want to include some thoughts as part of your program. This is what comments are for.
+
+
 
 */
 
