@@ -246,9 +246,24 @@ Conditional execution is written with the if keyword in JavaScript.
 This alternate path is represented by the second arrow in the diagram.
 The else keyword can be used, together with if, to create two separate, alternative execution paths.
 
+If we have more than two paths to choose from, multiple if/else pairs can be “chained” together. Here’s an example:
 
 
+////while and do loops
+That works, but the idea of writing a program is to make something less work, not more.
+What we need is a way to repeat some code. This form of control flow is called a loop:
 
+Looping control flow allows us to go back to some point in the program where we were before and repeat it with our current program state.
+
+A statement starting with the keyword while creates a loop.
+The word while is followed by an expression in parentheses and then a statement, much like if.
+The loop executes that statement as long as the expression produces a value that is true when converted to Boolean type.
+
+Many JavaScript programmers wrap every single loop or if body in braces.
+In this book, I will write most single-statement bodies without braces, since I value brevity.
+
+
+////Indenting Code
 
 */
 
@@ -278,4 +293,13 @@ console.log(one + two);
 var x = 30;
 console.log("the value of x is", x);
 // → the value of x is 30
+
+var num = Number(prompt("Pick a number", "0"));
+
+if (num < 10)
+  alert("Small");
+else if (num < 100)
+  alert("Medium");
+else
+  alert("Large");
 */
