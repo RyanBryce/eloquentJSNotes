@@ -385,5 +385,91 @@ else
 
 ////////////////////////CHAPTER 3 Functions
 /*
+///////////////Notes
+
+
+////Intro
+Functions are the bread and butter of JavaScript programming. The concept of wrapping a piece of program in a value has many uses.
+It is a tool to structure larger programs, to reduce repetition, to associate names with subprograms, and to isolate these subprograms from each other.
+
+
+////Defining a function
+
+
+A function definition is just a regular variable definition where the value given to the variable happens to be a function.
+
+ A function is created by an expression that starts with the keyword function.
+ Functions have a set of parameters (in this case, only x) and a body, which contains the statements that are to be executed when the function is called.
+ The function body must always be wrapped in braces, even when it consists of only a single statement (as in the previous example).
+
+A function can have multiple parameters or no parameters at all.
+
+A return statement determines the value the function returns.
+
+When control comes across such a statement, it immediately jumps out of the current function and gives the returned value to the code that called the function.
+The return keyword without an expression after it will cause the function to return undefined.
+
+
+////Parameters and scopes
+The parameters to a function behave like regular variables, but their initial values are given by the caller of the function, not the code in the function itself.
+
+An important property of functions is that the variables created inside of them, including their parameters, are local to the function.
+
+The result variable in the power example will be newly created every time the function is called, and these separate incarnations do not interfere with each other.
+
+This “localness” of variables applies only to the parameters and to variables declared with the var keyword inside the function body.
+
+By treating function-local variables as existing only within the function, the language makes it possible to read and understand functions as small universes,
+without having to worry about all the code at once.
+
+
+////Nested scope
+JavaScript distinguishes not just between global and local variables. Functions can be created inside other functions, producing several degrees of locality.
+
+All variables from blocks around a function’s definition are visible—meaning both those in function bodies that enclose it and those at the top level of the program. This approach to variable visibility is called lexical scoping.
+
+In JavaScript, functions are the only things that create a new scope. You are allowed to use free-standing blocks.
+var something = 1;
+{
+  var something = 2;
+  // Do stuff with variable something...
+}
+// Outside of the block again...
+In fact, although blocks like this are allowed, they are useful only to group the body of an if statement or a loop.
+The let keyword, which works like var but creates a variable that is local to the enclosing block, not the enclosing function.
+
+
+////Functions as values
+Function variables usually simply act as names for a specific piece of the program.
+Such a variable is defined once and never changed. This makes it easy to start confusing the function and its name.
+
+But the two are different. A function value can do all the things that other values can do—you can use it in arbitrary expressions, not just call it. It is possible to store a function value in a new place, pass it as an argument to a function, and so on. Similarly, a variable that holds a function is still just a regular variable and can be assigned a new value, like so:
+
+var launchMissiles = function(value) {
+  missileSystem.launch("now");
+};
+if (safeMode)
+  launchMissiles = function(value) {/* do nothing */};
+
+
+
+
 
 */
+////////JS For Functions
+
+var x = "outside";
+
+var f1 = function() {
+  var x = "inside f1";
+};
+f1();
+console.log(x);
+// → outside
+
+var f2 = function() {
+  x = "inside f2";
+};
+f2();
+console.log(x);
+// → inside f2
