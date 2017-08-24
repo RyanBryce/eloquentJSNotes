@@ -449,7 +449,63 @@ var launchMissiles = function(value) {
   missileSystem.launch("now");
 };
 if (safeMode)
-  launchMissiles = function(value) {/* do nothing */};
+  launchMissiles = function(value) { do nothing };
+
+
+////Declaration notation
+There is a slightly shorter way to say “var square = function…”. The function keyword can also be used at the start of a statement, as in the following:
+function square(x) {
+  return x * x;
+}
+This is a function declaration. The statement defines the variable square and points it at the given function.
+There is one subtlety with this form of function definition, however.
+console.log("The future says:", future());
+
+function future() {
+  return "We STILL have no flying cars.";
+}
+
+This code works, even though the function is defined below the code that uses it. This is because function declarations are not part of the regular top-to-bottom flow of control. (hoisting)
+They are conceptually moved to the top of their scope and can be used by all the code in that scope.
+
+What happens when you put such a function definition inside a conditional (if) block or a loop? Well, don’t do that.
+Different JavaScript platforms in different browsers have traditionally done different things in that situation, and the latest standard actually forbids it.
+If you want your programs to behave consistently, only use this form of function-defining statements in the outermost block of a function or program.
+function example() {
+  function a() {} // Okay
+  if (something) {
+    function b() {} // Danger!
+  }
+}
+
+
+////The Call Stack
+
+function greet(who) {
+  console.log("Hello " + who);
+}
+greet("Harry");
+console.log("Bye");
+
+A run through this program goes roughly like this: the call to greet causes control to jump to the start of that function (line 2). It calls console.log (a built-in browser function), which takes control, does its job, and then returns control to line 2. Then it reaches the end of the greet function, so it returns to the place that called it, at line 4. The line after that calls console.log again.
+
+We could show the flow of control schematically like this:
+
+top
+   greet
+        console.log
+   greet
+top
+   console.log
+top
+
+Because a function has to jump back to the place of the call when it returns, the computer must remember the context from which the function was called. In one case, console.log has to jump back to the greet function. In the other case, it jumps back to the end of the program.
+
+The place where the computer stores this context is the call stack. Every time a function is called, the current context is put on top of this “stack”. When the function returns, it removes the top context from the stack and uses it to continue execution.
+
+
+
+
 
 
 
@@ -458,18 +514,18 @@ if (safeMode)
 */
 ////////JS For Functions
 
-var x = "outside";
-
-var f1 = function() {
-  var x = "inside f1";
-};
-f1();
-console.log(x);
-// → outside
-
-var f2 = function() {
-  x = "inside f2";
-};
-f2();
-console.log(x);
-// → inside f2
+// var x = "outside";
+//
+// var f1 = function() {
+//   var x = "inside f1";
+// };
+// f1();
+// console.log(x);
+// // → outside
+//
+// var f2 = function() {
+//   x = "inside f2";
+// };
+// f2();
+// console.log(x);
+// // → inside f2
