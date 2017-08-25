@@ -560,6 +560,25 @@ function multiplier(factor) {
 In the example, multiplier returns a frozen chunk of code that gets stored in the twice variable. The last line then calls the value in this variable, causing the frozen code (return number * factor;) to be activated. It still has access to the factor variable from the multiplier call that created it, and in addition it gets access to the argument passed when unfreezing it, 5, through its number parameter.
 
 
+////Recursion
+It is perfectly okay for a function to call itself, as long as it takes care not to overflow the stack. A function that calls itself is called recursive.
+
+WTF this is some crazy stuff
+
+function countDown(num) {
+  if (num != 0) {
+    consolelog(num)
+    countDown(num - 1)
+  }
+}
+
+The basic rule, which has been repeated by many programmers and with which I wholeheartedly agree, is to not worry about efficiency until you know for sure that the program is too slow. If it is, find out which parts are taking up the most time, and start exchanging elegance for efficiency in those parts.
+
+
+
+
+
+
 
 
 
